@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let arr = []; 
+  for(var key in obj) {
+    arr.push(obj[key])
+  }
+  return arr.join("");
 }
 
 
@@ -54,7 +58,16 @@ function showValues( obj ) {
 */
 
 //Code Here
+function greaterThan10(obj){
+  let arr = [];
+  for(var key in obj ){
+    if (obj[key] > 10){
+      obj[key] = 0
 
+    }
+  } 
+  return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -64,7 +77,12 @@ function showValues( obj ) {
   Write a for in loop that loops over the object and changes every value to be itself multipled by 2.
   Return the updated object.
 */
-
+function double (obj){
+  let arr = [];
+  for(var key in obj){
+    obj[key] = obj[key] * 2
+  } return obj;
+} 
 //Code Here
 
 
@@ -79,9 +97,16 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
+
 //Code Here
-
-
+function secrets(obj){
+    var string = ''
+    for(var key in obj){
+      if(key[0] === 's' && key[1] === 'h'){
+        string += obj[key]
+      } 
+    } return string
+  }
 
 /* 
   Sometimes it's needed to delete object properties. 
@@ -111,7 +136,11 @@ function showValues( obj ) {
 */
 
 //Code Here
+function removePassword(obj){
+  delete obj.password
+  return obj
 
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -132,6 +161,17 @@ var deleteTheBigNumbers = {
 //Code Here
 
 
+for(var key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key]
+  } 
+}
+  
+ 
+ 
+
+
+
 
 ////////// PROBLEM 7 //////////
 
@@ -143,6 +183,13 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+function startsWithK(obj){
+  for(var key in obj){
+    if(key[0] === 'k'){
+      delete obj[key]
+    }
+  }return obj
+}
 
 
 
@@ -158,5 +205,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+
+function hiddenTreasure(obj){
+  for(var key in obj){
+    if (!obj[key].includes('treasure')){
+      delete obj[key]
+
+    }
+  } return obj;
+}
 
 
